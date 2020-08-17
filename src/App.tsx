@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Sidebar from "./components/Sidebar";
 import { PagesProvider } from "./services/PagesContext";
 import Page from "./components/Page";

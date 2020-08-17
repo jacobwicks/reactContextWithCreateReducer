@@ -2,21 +2,22 @@ import React, { createContext, useReducer } from "react";
 import { createReducer, Reducer } from "@reduxjs/toolkit";
 import { PagesAction } from "./actions";
 import addPage, { reducer as addPageReducer } from "./actions/AddPage";
-import removePage, { reducer as removePageReducer } from "./actions/RemovePage";
-import ok, { reducer as okReducer } from "./actions/Ok";
-import noLoad, { reducer as noLoadReducer } from "./actions/NoLoad";
+import deletePage, { reducer as deletePageReducer } from "./actions/DeletePage";
+import setCurrentPage, {
+  reducer as setCurrentPageReducer,
+} from "./actions/SetCurrentPage";
 import getPage from "../GetPage";
 
 export type Page = {
-  //the name of the page
-  page: string;
+  //the number of the page
+  number: number;
 
   //the questions that are on the page
   questions: string[];
 };
 
 export type PagesState = {
-  current?: string;
+  current?: number;
   pages: Page[];
   dispatch: React.Dispatch<PagesAction>;
 };
@@ -26,7 +27,7 @@ const page2 = getPage(2);
 const page3 = getPage(3);
 
 export const initialState = {
-  current: "This is page 1",
+  current: 1,
   pages: [page1, page2, page3],
   dispatch: (action: PagesAction) => undefined,
 } as PagesState;
@@ -56,9 +57,8 @@ export const reducer: Reducer<
       )
 
       //call addCase again to add all the other cases
-      .addCase(removePage, removePageReducer)
-      .addCase(ok, okReducer)
-      .addCase(noLoad, noLoadReducer)
+      .addCase(deletePage, deletePageReducer)
+      .addCase(setCurrentPage, setCurrentPageReducer)
 );
 
 const PagesContext = createContext(initialState);

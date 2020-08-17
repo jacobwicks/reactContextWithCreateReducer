@@ -1,19 +1,29 @@
 import React, { useContext } from "react";
 import { PagesContext } from "../../services/PagesContext";
+import DeletePage from "../DeletePage";
 
 const Page = () => {
   const { current, pages } = useContext(PagesContext);
 
-  const thisPage = pages.find((page) => page.page === current);
+  const currentPage = pages.find((page) => page.number === current);
 
-  if (!thisPage) return <div />;
+  if (!currentPage)
+    return (
+      <div className="main">
+        <h2>No page selected</h2>
+      </div>
+    );
 
-  const { questions } = thisPage;
+  const { questions } = currentPage;
 
   return (
-    <div>
+    <div className="main">
+      <h2>This is page {currentPage.number}</h2>
+      <DeletePage />
+      <br />
+      <br />
       {questions.map((question, index) => (
-        <div>
+        <div key={index}>
           <div>
             {index + 1}. {question}
           </div>

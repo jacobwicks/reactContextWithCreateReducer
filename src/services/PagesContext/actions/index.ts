@@ -1,15 +1,14 @@
 import { addPage } from "./AddPage";
-import { noLoad } from "./NoLoad";
-import { ok } from "./Ok";
-import { removePage } from "./RemovePage";
+import { deletePage } from "./DeletePage";
 import { Page } from "..";
+import { setCurrentPage } from "./SetCurrentPage";
 
 //enum containing the action types
 export enum PagesActionTypes {
   addPage = "addPage",
-  removePage = "removePage",
-  ok = "ok",
-  noLoad = "noLoad",
+  addQuestion = "addQuestion",
+  deletePage = "deletePage",
+  setCurrentPage = "setCurrentPage",
 }
 
 //declare payload interfaces
@@ -17,9 +16,5 @@ export interface hasPage {
   page: Page;
 }
 
-export interface anotherPayload {
-  whatever: number;
-}
-
 //union type for all possible actions
-export type PagesAction = addPage | noLoad | ok | removePage;
+export type PagesAction = addPage | deletePage | setCurrentPage;

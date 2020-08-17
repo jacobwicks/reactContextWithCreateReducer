@@ -56,6 +56,7 @@ const questions = [
   "When was the last time you were snooping, and found something you wish you hadn’t?",
 ];
 
+//returns an array of questions
 const getQuestions = (number = 1) => {
   let selected = [];
   for (let i = 0; i < number; i++) {

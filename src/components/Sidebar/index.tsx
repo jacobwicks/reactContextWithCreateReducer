@@ -1,26 +1,31 @@
 import React, { useContext } from "react";
 import { PagesContext } from "../../services/PagesContext";
 import AddPage from "../AddPage";
-
-const RemovePage = () => (
-  <button className="btn">
-    <i className="fa fa-trash"></i>Delete Page
-  </button>
-);
+import setCurrentPage from "../../services/PagesContext/actions/SetCurrentPage";
 
 const Sidebar = () => {
-  const { pages } = useContext(PagesContext);
+  const { dispatch, current, pages } = useContext(PagesContext);
   return (
     <div className="sidenav">
       <AddPage />
-      <RemovePage />
+      <br />
       {pages &&
-        pages.map((page) => (
-          <a>
-            {page.page} <br />
-            {page.questions.length} Question
-            {page.questions.length !== 1 ? "s" : ""}
-          </a>
+        pages.map((page, index) => (
+          <div key={index} style={{ padding: 10 }}>
+            <button
+              className="btn"
+              style={
+                current === page.number
+                  ? { backgroundColor: "darkblue" }
+                  : undefined
+              }
+              onClick={() => dispatch(setCurrentPage(page.number))}
+            >
+              Page {page.number} <br />
+              {page.questions.length} Question
+              {page.questions.length !== 1 ? "s" : ""}
+            </button>
+          </div>
         ))}
     </div>
   );

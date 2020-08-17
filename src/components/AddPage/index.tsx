@@ -7,14 +7,14 @@ const AddPage = () => {
   const { dispatch, pages } = useContext(PagesContext);
 
   const handleClick = () => {
-    const pageNumber = Number(pages[pages.length - 1].page.slice(-1)) + 1;
+    const pageNumber = pages.length ? pages[pages.length - 1].number + 1 : 1;
     const newPage = getPage(pageNumber);
     dispatch(addPage({ page: newPage }));
   };
 
   return (
     <button className="btn" onClick={() => handleClick()}>
-      <i className="fa fa-plus"></i>Add Page
+      <i className="fa fa-plus"></i> Add Page
     </button>
   );
 };
