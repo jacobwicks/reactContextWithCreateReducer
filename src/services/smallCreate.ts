@@ -1,11 +1,12 @@
 export const reducer: Reducer<
-  PagesState,
-  PagesAction
+  AlbumsState,
+  AlbumsAction
 > = createReducer(
   initialState,
   (builder) =>
     builder
-      .addCase(addPage, addPageReducer)
-      .addCase(deletePage, deletePageReducer)
-      .addCase(setCurrentPage, setCurrentPageReducer)
+      .addCase(accept, acceptReducer)
+      .addCase(createNewAlbum, createNewAlbumReducer)
+      .addCase(delete, deleteReducer)
+      .addCase(deleteAlbum, deleteAlbumReducer)
 );
