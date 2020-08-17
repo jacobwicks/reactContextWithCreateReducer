@@ -6,7 +6,6 @@ import { setCurrentPage } from "./SetCurrentPage";
 //enum containing the action types
 export enum PagesActionTypes {
   addPage = "addPage",
-  addQuestion = "addQuestion",
   deletePage = "deletePage",
   setCurrentPage = "setCurrentPage",
 }
