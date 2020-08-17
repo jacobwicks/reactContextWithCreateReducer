@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reactContextWithCreateReducer/static/css/main.dd82f984.chunk.css",
+    "main.js": "/reactContextWithCreateReducer/static/js/main.2f7c93d3.chunk.js",
+    "main.js.map": "/reactContextWithCreateReducer/static/js/main.2f7c93d3.chunk.js.map",
+    "runtime-main.js": "/reactContextWithCreateReducer/static/js/runtime-main.e25fd2e7.js",
+    "runtime-main.js.map": "/reactContextWithCreateReducer/static/js/runtime-main.e25fd2e7.js.map",
+    "static/js/2.2d26c6cf.chunk.js": "/reactContextWithCreateReducer/static/js/2.2d26c6cf.chunk.js",
+    "static/js/2.2d26c6cf.chunk.js.map": "/reactContextWithCreateReducer/static/js/2.2d26c6cf.chunk.js.map",
+    "index.html": "/reactContextWithCreateReducer/index.html",
+    "precache-manifest.a8b977e20337f7dce67c6ecf2923fd89.js": "/reactContextWithCreateReducer/precache-manifest.a8b977e20337f7dce67c6ecf2923fd89.js",
+    "service-worker.js": "/reactContextWithCreateReducer/service-worker.js",
+    "static/css/main.dd82f984.chunk.css.map": "/reactContextWithCreateReducer/static/css/main.dd82f984.chunk.css.map",
+    "static/js/2.2d26c6cf.chunk.js.LICENSE.txt": "/reactContextWithCreateReducer/static/js/2.2d26c6cf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e25fd2e7.js",
+    "static/js/2.2d26c6cf.chunk.js",
+    "static/css/main.dd82f984.chunk.css",
+    "static/js/main.2f7c93d3.chunk.js"
+  ]
+}
